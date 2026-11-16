@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>7</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    function rollDice(sides) {
+      return Math.floor(Math.random() * sides) + 1;
+    }
+
+    const sides = parseInt(prompt('Enter the number of sides on the dice:'), 10);
+    let html = '<ul>';
+    let roll = 0;
+
+    while (roll !== sides) {
+      roll = rollDice(sides);
+      html += `<li>${roll}</li>`;
+    }
+
+    html += '</ul>';
+    document.querySelector('#target').innerHTML = html;
+  </script>
+</body>
+</html>

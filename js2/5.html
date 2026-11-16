@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>5</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    const numbers = [];
+    while (true) {
+      const num = parseFloat(prompt('Enter a number:'));
+      if (numbers.includes(num)) {
+        alert(`The number ${num} has already been given.`);
+        break;
+      }
+      numbers.push(num);
+    }
+
+    numbers.sort((a, b) => a - b);
+
+    for (const num of numbers) {
+      console.log(num);
+    }
+  </script>
+</body>
+</html>

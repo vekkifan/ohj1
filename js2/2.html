@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>2</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    const count = parseInt(prompt('Enter the number of participants:'), 10);
+    const participants = [];
+
+    for (let i = 0; i < count; i++) {
+      participants.push(prompt(`Enter name of participant ${i + 1}:`));
+    }
+
+    participants.sort();
+
+    let html = '<ol>';
+    for (const name of participants) {
+      html += `<li>${name}</li>`;
+    }
+    html += '</ol>';
+
+    document.querySelector('#target').innerHTML = html;
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>8</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    function concat(arr) {
+      let result = '';
+      for (let i = 0; i < arr.length; i++) {
+        result += arr[i];
+      }
+      return result;
+    }
+
+    const names = ['Johnny', 'DeeDee', 'Joey', 'Marky'];
+    const concatenated = concat(names);
+
+    document.querySelector('#target').innerHTML = concatenated;
+  </script>
+</body>
+</html>

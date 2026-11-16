@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>3</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    const dogs = [];
+    for (let i = 0; i < 6; i++) {
+      dogs.push(prompt(`Enter name of dog ${i + 1}:`));
+    }
+
+    dogs.sort().reverse();
+
+    let html = '<ul>';
+    for (const dog of dogs) {
+      html += `<li>${dog}</li>`;
+    }
+    html += '</ul>';
+
+    document.querySelector('#target').innerHTML = html;
+  </script>
+</body>
+</html>

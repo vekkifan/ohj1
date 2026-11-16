@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>10</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    const candidateCount = parseInt(prompt('Enter the number of candidates:'), 10);
+    const candidates = [];
+
+    for (let i = 0; i < candidateCount; i++) {
+      const name = prompt(`Name for candidate ${i + 1}:`);
+      candidates.push({
+        name: name,
+        votes: 0,
+      });
+    }
+
+    const voterCount = parseInt(prompt('Enter the number of voters:'), 10);
+
+    for (let i = 0; i < voterCount; i++) {
+      const vote = prompt(`Voter ${i + 1}, enter candidate name (leave empty for an empty vote):`);
+      if (vote && vote.trim() !== '') {
+        const candidate = candidates.find(c => c.name.toLowerCase() === vote.trim().toLowerCase());
+        if (candidate) {
+          candidate.votes++;
+        }
+      }
+    }
+
+    candidates.sort((a, b) => b.votes - a.votes);
+
+    console.log(`The winner is ${candidates[0].name} with ${candidates[0].votes} votes.`);
+    console.log('results:');
+    for (const candidate of candidates) {
+      console.log(`${candidate.name}: ${candidate.votes} votes`);
+    }
+  </script>
+</body>
+</html>

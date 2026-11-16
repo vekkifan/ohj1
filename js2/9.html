@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>9</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    function even(arr) {
+      const evenNumbers = [];
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+          evenNumbers.push(arr[i]);
+        }
+      }
+      return evenNumbers;
+    }
+
+    const originalArray = [2, 7, 4];
+    const evenArray = even(originalArray);
+
+    console.log('Original array:', originalArray);
+    console.log('Even numbers array:', evenArray);
+  </script>
+</body>
+</html>

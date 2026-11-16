@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>4</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    const numbers = [];
+    while (true) {
+      const num = parseFloat(prompt('Enter a number (0 to stop):'));
+      if (num === 0) {
+        break;
+      }
+      numbers.push(num);
+    }
+
+    numbers.sort((a, b) => b - a);
+
+    for (const num of numbers) {
+      console.log(num);
+    }
+  </script>
+</body>
+</html>
