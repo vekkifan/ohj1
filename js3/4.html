@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>4</title>
+</head>
+<body>
+  <select id="target"></select>
+
+  <script>
+    'use strict';
+
+    const students = [
+      { name: 'John', id: '2345768' },
+      { name: 'Paul', id: '2134657' },
+      { name: 'Jones', id: '5423679' }
+    ];
+
+    const target = document.querySelector('#target');
+
+    for (const student of students) {
+      const option = document.createElement('option');
+      option.value = student.id;
+      option.textContent = student.name;
+      target.appendChild(option);
+    }
+  </script>
+</body>
+</html>

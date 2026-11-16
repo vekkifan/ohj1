@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>8</title>
+</head>
+<body>
+  <input id="num1" type="text" placeholder="enter first integer">
+  <br>
+  <input id="num2" type="text" placeholder="enter second integer">
+  <br>
+  <select id="operation">
+    <option value="add">+</option>
+    <option value="sub">-</option>
+    <option value="multi">*</option>
+    <option value="div">/</option>
+  </select>
+  <br>
+  <button id="start">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    'use strict';
+
+    const num1Input = document.querySelector('#num1');
+    const num2Input = document.querySelector('#num2');
+    const operationSelect = document.querySelector('#operation');
+    const button = document.querySelector('#start');
+    const resultP = document.querySelector('#result');
+
+    button.addEventListener('click', () => {
+      const n1 = parseFloat(num1Input.value);
+      const n2 = parseFloat(num2Input.value);
+      const op = operationSelect.value;
+      let res;
+
+      switch (op) {
+        case 'add':
+          res = n1 + n2;
+          break;
+        case 'sub':
+          res = n1 - n2;
+          break;
+        case 'multi':
+          res = n1 * n2;
+          break;
+        case 'div':
+          res = n1 / n2;
+          break;
+      }
+
+      resultP.textContent = res;
+    });
+  </script>
+</body>
+</html>

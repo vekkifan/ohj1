@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>9</title>
+</head>
+<body>
+  <input id="calculation" type="text" placeholder="e.g. 3+5">
+  <br>
+  <button id="start">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    'use strict';
+
+    const calcInput = document.querySelector('#calculation');
+    const button = document.querySelector('#start');
+    const resultP = document.querySelector('#result');
+
+    button.addEventListener('click', () => {
+      const expr = calcInput.value.trim();
+      let res;
+
+      if (expr.includes('+')) {
+        const parts = expr.split('+');
+        res = parseInt(parts[0], 10) + parseInt(parts[1], 10);
+      } else if (expr.includes('-')) {
+        const parts = expr.split('-');
+        res = parseInt(parts[0], 10) - parseInt(parts[1], 10);
+      } else if (expr.includes('*')) {
+        const parts = expr.split('*');
+        res = parseInt(parts[0], 10) * parseInt(parts[1], 10);
+      } else if (expr.includes('/')) {
+        const parts = expr.split('/');
+        res = parseInt(parts[0], 10) / parseInt(parts[1], 10);
+      }
+
+      resultP.textContent = res;
+    });
+  </script>
+</body>
+</html>
