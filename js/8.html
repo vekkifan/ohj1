@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>8</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    const startYear = parseInt(prompt('Enter the start year:'), 10);
+    const endYear = parseInt(prompt('Enter the end year:'), 10);
+
+    let listHTML = '<ul>';
+
+    for (let year = startYear; year <= endYear; year++) {
+      if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        listHTML += `<li>${year}</li>`;
+      }
+    }
+
+    listHTML += '</ul>';
+    document.querySelector('#target').innerHTML = listHTML;
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>5</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    const year = parseInt(prompt('Enter a year:'), 10);
+    let resultText;
+
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+      resultText = `${year} is a leap year.`;
+    } else {
+      resultText = `${year} is not a leap year.`;
+    }
+
+    document.querySelector('#target').innerHTML = resultText;
+  </script>
+</body>
+</html>

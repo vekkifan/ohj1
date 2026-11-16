@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>10</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    const numDice = parseInt(prompt('Enter the number of dice:'), 10);
+    const targetSum = parseInt(prompt('Enter the sum of the eye numbers of interest:'), 10);
+
+    const simulations = 10000;
+    let hitCount = 0;
+
+    for (let i = 0; i < simulations; i++) {
+      let currentSum = 0;
+      for (let j = 0; j < numDice; j++) {
+        currentSum += Math.floor(Math.random() * 6) + 1;
+      }
+      if (currentSum === targetSum) {
+        hitCount++;
+      }
+    }
+
+    const probability = (hitCount / simulations) * 100;
+
+    document.querySelector('#target').innerHTML = 
+      `Probability to get sum ${targetSum} with ${numDice} dice is ${probability.toFixed(2)}%`;
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>3</title>
+</head>
+<body>
+  <div id="target"></div>
+
+  <script>
+    'use strict';
+
+    const num1 = parseInt(prompt('Enter the first integer:'), 10);
+    const num2 = parseInt(prompt('Enter the second integer:'), 10);
+    const num3 = parseInt(prompt('Enter the third integer:'), 10);
+
+    const sum = num1 + num2 + num3;
+    const product = num1 * num2 * num3;
+    const average = sum / 3;
+
+    document.querySelector('#target').innerHTML = `
+      Sum: ${sum} <br>
+      Product: ${product} <br>
+      Average: ${average.toFixed(2)}
+    `;
+  </script>
+</body>
+</html>
